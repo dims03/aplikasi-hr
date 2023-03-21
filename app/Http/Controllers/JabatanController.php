@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-//use App\Models\Pegawai;
+use App\Models\Pegawai;
 use App\Models\Jabatan;
 use Illuminate\Pagination\Paginator;
 
@@ -16,7 +16,7 @@ class JabatanController extends Controller
 		$dataJabatan = Jabatan::paginate(3);
 		return view('jabatan.jabatan',compact('dataJabatan'));
 	}
-	
+
     public function cari(Request $request)
     {
 		// mengambil data dari table jabatan
@@ -26,7 +26,7 @@ class JabatanController extends Controller
 			->paginate();
 		return view('jabatan.jabatan',compact('dataJabatan'));
 	}
-	
+
 	// method untuk menampilkan view form tambah jabatan
 	public function tambah()
 	{
@@ -35,7 +35,7 @@ class JabatanController extends Controller
 		return view('jabatan.tambah', compact('jabatans'));
 
 	}
-	
+
 	// method untuk insert data ke table jabatan
 	public function store(Request $request)
 	{
@@ -47,16 +47,16 @@ class JabatanController extends Controller
 		return redirect('/jabatan');
 
 	}
-	
+
 	public function edit($id)
 	{
 		// mengambil data jabatan berdasarkan id yang dipilih
 		//$jab = Jabatan::all();
 		$jab = Jabatan::findorfail($id);
 		return view('jabatan.edit', compact('jab'));
-	 
+
 	}
-	
+
 	// update data jabatan
 	public function update(Request $request)
 	{
@@ -67,13 +67,13 @@ class JabatanController extends Controller
 		// alihkan halaman ke halaman jabatan
 		return redirect('/jabatan');
 	}
-	
+
 	// method untuk hapus data jabatan
 	public function hapus($id)
 	{
 		// menghapus data jabatan berdasarkan id yang dipilih
 		DB::table('jabatan')->where('id',$id)->delete();
-			
+
 		// alihkan halaman ke halaman jabatan
 		return redirect('/jabatan');
 	}

@@ -17,8 +17,8 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
-	
-	
+
+
     <!-- Main content -->
     <section class="content">
 
@@ -26,13 +26,13 @@
       <div class="card">
         <div class="card-header">
           <h3 class="card-title"></h3>
-			
+
            <div class="col-md-4">
 		    <button class="btn btn-lg btn-default float-left">
 		    <a href="/pegawai/tambah" > Tambah Pegawai</a></button>
-			
+
            </div>
-          
+
 		  <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
@@ -49,7 +49,7 @@
                 </div>
             </div>
         </div>
-		  
+
         </div>
         <div class="card-body">
 			<section class="content">
@@ -95,19 +95,19 @@
 					  </div>
 					  <!-- /.card-body -->
 					</div>
-				
+
 					<div class="card-footer">
 						<div class="row">
-						
+
 							<div class="col md-4">
 								{{ $dataPegawai->links() }}
 							</div>
-							
+
 							<div class="col md-4">
 								<a href="/pegawai/cetak_pdf" class="btn btn-warning" target="_blank">
 								<i class="fas fa-print"></i> Print Data Pegawai</a>
 							</div>
-							
+
 							<div class="col md-4 float-right">
 								Halaman ke : <b>{{ $dataPegawai->currentPage() }}</b> <br/>
 								Total Data Pegawai : <b>{{ $dataPegawai->total() }}</b>
@@ -123,7 +123,7 @@
 			  </div>
 			  <!-- /.container-fluid -->
 			</section>
-		
+
         </div>
         <!-- /.card-body -->
         <!-- /.card-footer-->

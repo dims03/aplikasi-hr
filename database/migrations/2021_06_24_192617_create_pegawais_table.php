@@ -13,13 +13,14 @@ class CreatePegawaisTable extends Migration
      */
     public function up()
     {
-        Schema::create('pegawais', function (Blueprint $table) {
+        Schema::create('pegawai', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->date('birthday');
-            $table->string('email');
-            $table->string('job');
-            $table->string('address'); 
+            $table->integer('jabatan_id');
+            $table->string('image');
+            $table->string('nama');
+            $table->text('alamat_rumah');
+            $table->text('alamat_kantor');
+            $table->integer('umur');
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ class CreatePegawaisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pegawais');
+        Schema::dropIfExists('pegawai');
     }
 }
